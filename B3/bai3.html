@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <style> 
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        div {
+            position: relative;
+            height: 80vh;
+        }
+        img {
+            width: 100px;
+            display: block;
+        }
+        .img1 {
+            position: absolute;
+        }
+        
+        .img1.active {
+            animation: topToBottom 3s linear infinite;
+        }
+
+        @keyframes topToBottom { 
+            from {
+                top: 0;
+            }
+            to {
+                top: 100%;
+            }
+        }
+
+        .img2 {
+            position: absolute;
+            right: 110%;
+        }
+
+        .img2.active {
+            animation: leftToRight 4s linear infinite;
+        }
+
+        @keyframes leftToRight { 
+            from {
+                right: 100%;
+            }
+            to {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="img1" src="../img/bucanh1.jpg" alt="">
+        <img class="img2" src="../img/bucanh4.jpg" alt="">
+    </div>
+    <script>
+        const img1=document.querySelector('.img1');
+        const img2=document.querySelector('.img2');
+        function dichuyen(){
+            img1.classList.add('active');
+            img2.classList.add('active');
+        }
+        dichuyen();
+        // setInterval(dichuyen,3000);
+    </script>
+</body>
+</html>

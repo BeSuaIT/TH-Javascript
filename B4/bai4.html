@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+    <style> 
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        div {
+            position: relative;
+            height: 800px;
+            width: 800px;
+            background-color: yellow;
+            margin-left: 30px;
+        }
+        img {
+            display: block;
+            margin-left: 10px;
+        }
+        .img {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="dichuyen()">Di chuyển</button>
+    <div>
+        <img class="img" width="100px" height="100px" src="../img/anhVuong.jpg" alt="">
+    </div>
+    <script>
+        function dichuyen() {
+            const img=document.querySelector('.img');
+            let id = null;
+            let pos=0;
+            clearInterval(id);
+            id=setInterval(frame,10);
+            function frame(){
+                if(pos==800-img.height){
+                    clearInterval(id);
+                }else{
+                    pos+=1;
+                    img.style.top=pos+'px';
+                    img.style.right=pos+'px';
+                }   
+            }
+        }
+    </script>
+</body>
+</html>
